@@ -1,0 +1,774 @@
+{
+  "bubbleSort": {
+    "name": "Bubble Sort",
+    "category": "Sorting Algorithm",
+    "description": "Bubble Sort is the simplest sorting algorithm that works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name because smaller elements \"bubble\" to the top of the list with each iteration.",
+    "howItWorks": [
+      "Start at the beginning of the array.",
+      "Compare each pair of adjacent elements.",
+      "If the left element is greater than the right, swap them.",
+      "Continue through the entire array — this completes one pass.",
+      "After each pass, the largest unsorted element is in its final position.",
+      "Repeat passes for the remaining unsorted portion until no swaps are needed."
+    ],
+    "complexity": {
+      "best": "O(n)",
+      "average": "O(n²)",
+      "worst": "O(n²)",
+      "space": "O(1)"
+    },
+    "applications": [
+      "Educational tool for teaching sorting concepts",
+      "Detecting whether a list is already sorted (optimized version)",
+      "Small datasets where simplicity is preferred over efficiency",
+      "Computer graphics for detecting small errors in nearly-sorted arrays"
+    ],
+    "advantages": [
+      "Simple to understand and implement",
+      "Stable sort — preserves relative order of equal elements",
+      "In-place algorithm — requires only O(1) extra space",
+      "Adaptive — O(n) when the array is nearly sorted",
+      "Easy to detect if the list is already sorted"
+    ],
+    "disadvantages": [
+      "Very slow for large datasets — O(n²) average and worst case",
+      "Far more comparisons than other algorithms like Merge Sort or Quick Sort",
+      "Not suitable for production use on large data",
+      "Poor cache performance compared to sequential-access algorithms"
+    ],
+    "interviewQuestions": [
+      "Why is Bubble Sort considered inefficient for large datasets?",
+      "How would you optimize Bubble Sort to detect an already sorted array?",
+      "What makes Bubble Sort a stable sorting algorithm?",
+      "Can Bubble Sort be used in real-world applications? When?"
+    ],
+    "commonMistakes": [
+      "Forgetting the optimization to stop early when no swaps occur in a pass",
+      "Using nested loops incorrectly causing n² iterations even for sorted arrays",
+      "Confusing the inner loop boundary (should be n-1-i, not n-1)",
+      "Not recognizing that Bubble Sort is adaptive (O(n) for nearly sorted data)"
+    ]
+  },
+  "selectionSort": {
+    "name": "Selection Sort",
+    "category": "Sorting Algorithm",
+    "description": "Selection Sort divides the array into a sorted and unsorted region. It repeatedly finds the minimum element from the unsorted region and places it at the beginning of the unsorted region, effectively growing the sorted region one element at a time.",
+    "howItWorks": [
+      "Start with the entire array as the unsorted region.",
+      "Find the minimum element in the unsorted region.",
+      "Swap it with the first element of the unsorted region.",
+      "Move the boundary of the sorted region one element to the right.",
+      "Repeat until the unsorted region is empty."
+    ],
+    "complexity": {
+      "best": "O(n²)",
+      "average": "O(n²)",
+      "worst": "O(n²)",
+      "space": "O(1)"
+    },
+    "applications": [
+      "Useful when memory writes are expensive (makes at most n swaps)",
+      "Small arrays where simplicity matters",
+      "Embedded systems with limited memory",
+      "Situations where auxiliary memory is limited"
+    ],
+    "advantages": [
+      "Simple to implement",
+      "In-place sorting — O(1) extra space",
+      "Performs minimum number of swaps — O(n)",
+      "Good for situations where write operations are costly"
+    ],
+    "disadvantages": [
+      "O(n²) time complexity in all cases — not adaptive",
+      "Not stable — can change relative order of equal elements",
+      "Slower than Insertion Sort on nearly sorted data",
+      "Not suitable for large datasets"
+    ],
+    "interviewQuestions": [
+      "Why is Selection Sort not stable? Can you give an example?",
+      "How does Selection Sort compare to Insertion Sort in terms of swaps?",
+      "When would you choose Selection Sort over other O(n²) algorithms?",
+      "What is the minimum number of swaps Selection Sort performs?"
+    ],
+    "commonMistakes": [
+      "Assuming Selection Sort is stable — it is not due to long-distance swaps",
+      "Not tracking the index of the minimum element correctly",
+      "Swapping on every comparison instead of only after finding the minimum",
+      "Expecting it to perform better on nearly sorted data — it does not adapt"
+    ]
+  },
+  "insertionSort": {
+    "name": "Insertion Sort",
+    "category": "Sorting Algorithm",
+    "description": "Insertion Sort builds the sorted array one element at a time by repeatedly picking the next element from the unsorted portion and inserting it into its correct position within the sorted portion. It is similar to how most people sort playing cards in their hands.",
+    "howItWorks": [
+      "Start from the second element (index 1), assuming the first element is sorted.",
+      "Pick the current element as the \"key\".",
+      "Compare the key with elements in the sorted portion, moving right to left.",
+      "Shift elements that are greater than the key one position to the right.",
+      "Insert the key into its correct position.",
+      "Repeat for all remaining elements."
+    ],
+    "complexity": {
+      "best": "O(n)",
+      "average": "O(n²)",
+      "worst": "O(n²)",
+      "space": "O(1)"
+    },
+    "applications": [
+      "Small datasets or nearly sorted data",
+      "Online sorting — sorting data as it arrives",
+      "Used as part of more complex algorithms like Timsort and Introsort",
+      "Real-time systems where data arrives incrementally"
+    ],
+    "advantages": [
+      "Simple and intuitive implementation",
+      "Stable sort",
+      "Adaptive — efficient for nearly sorted data O(n)",
+      "In-place — O(1) space",
+      "Efficient for small datasets",
+      "Online algorithm — can sort as data is received"
+    ],
+    "disadvantages": [
+      "O(n²) worst and average case",
+      "Not suitable for large datasets",
+      "More shifts/writes compared to Selection Sort",
+      "Slower than divide-and-conquer algorithms for large inputs"
+    ],
+    "interviewQuestions": [
+      "Why is Insertion Sort preferred for small or nearly sorted datasets?",
+      "How does Insertion Sort differ from Selection Sort in terms of stability?",
+      "What is the role of Insertion Sort in hybrid algorithms like Timsort?",
+      "Can Insertion Sort be implemented as an online algorithm? Explain."
+    ],
+    "commonMistakes": [
+      "Starting the loop from index 0 instead of index 1",
+      "Shifting elements in the wrong direction during insertion",
+      "Forgetting to save the key element before shifting",
+      "Using swaps instead of shifts, which increases the number of operations"
+    ]
+  },
+  "mergeSort": {
+    "name": "Merge Sort",
+    "category": "Sorting Algorithm",
+    "description": "Merge Sort is an efficient, general-purpose, comparison-based sorting algorithm that uses the divide-and-conquer strategy. It divides the array into halves, recursively sorts each half, and then merges the two sorted halves back together. It guarantees O(n log n) performance in all cases.",
+    "howItWorks": [
+      "Divide the unsorted array into two halves.",
+      "Recursively sort each half using Merge Sort.",
+      "Merge the two sorted halves by comparing elements from each half.",
+      "Place the smaller element first and advance that pointer.",
+      "Continue until all elements from both halves are merged.",
+      "The base case is an array of one element, which is trivially sorted."
+    ],
+    "complexity": {
+      "best": "O(n log n)",
+      "average": "O(n log n)",
+      "worst": "O(n log n)",
+      "space": "O(n)"
+    },
+    "applications": [
+      "External sorting — sorting data that does not fit in memory",
+      "Sorting linked lists efficiently",
+      "Inversion count problems",
+      "Stable sorting requirements in databases and libraries",
+      "Java's Arrays.sort() for objects uses a variant of Merge Sort (Timsort)"
+    ],
+    "advantages": [
+      "Guaranteed O(n log n) time complexity in all cases",
+      "Stable sort — preserves order of equal elements",
+      "Well-suited for linked lists",
+      "Parallelizable — independent subproblems can run concurrently",
+      "Predictable performance — no worst-case degradation"
+    ],
+    "disadvantages": [
+      "Requires O(n) additional memory",
+      "Slower than Quick Sort in practice due to higher constant factors",
+      "Not in-place for arrays",
+      "Overkill for small arrays — Insertion Sort is faster for n < 50"
+    ],
+    "interviewQuestions": [
+      "Why does Merge Sort require O(n) extra space?",
+      "How would you implement Merge Sort for a linked list?",
+      "What is the difference between top-down and bottom-up Merge Sort?",
+      "How is Merge Sort used to count inversions in an array?",
+      "Why is Merge Sort preferred for external sorting?"
+    ],
+    "commonMistakes": [
+      "Forgetting to handle remaining elements after the merge loop",
+      "Incorrectly calculating the mid index causing infinite recursion",
+      "Not creating a proper copy of subarrays before merging in-place",
+      "Overlooking the O(n) space overhead when comparing with Quick Sort"
+    ]
+  },
+  "quickSort": {
+    "name": "Quick Sort",
+    "category": "Sorting Algorithm",
+    "description": "Quick Sort is a highly efficient divide-and-conquer sorting algorithm. It works by selecting a \"pivot\" element and partitioning the array so that elements less than the pivot come before it and elements greater come after. The sub-arrays are then sorted recursively. It is the default sorting algorithm in many standard libraries.",
+    "howItWorks": [
+      "Choose a pivot element (here: last element — Lomuto partition).",
+      "Partition the array: move elements smaller than pivot to the left, larger to the right.",
+      "Place the pivot in its final sorted position.",
+      "Recursively apply Quick Sort to the left sub-array.",
+      "Recursively apply Quick Sort to the right sub-array.",
+      "Base case: sub-arrays of length 0 or 1 are already sorted."
+    ],
+    "complexity": {
+      "best": "O(n log n)",
+      "average": "O(n log n)",
+      "worst": "O(n²)",
+      "space": "O(log n)"
+    },
+    "applications": [
+      "General-purpose sorting in standard libraries (C qsort, Java primitive sort)",
+      "Systems where average-case performance matters more than worst-case",
+      "In-memory sorting of large datasets",
+      "Virtual memory environments — good locality of reference",
+      "Basis for Introsort (used in C++ std::sort)"
+    ],
+    "advantages": [
+      "Fastest in practice among comparison-based sorts",
+      "In-place (with O(log n) stack space)",
+      "Cache-friendly — good locality of reference",
+      "Tail-recursive optimization possible",
+      "Average case O(n log n) with small constant factor"
+    ],
+    "disadvantages": [
+      "Worst case O(n²) on already sorted or nearly sorted arrays",
+      "Not stable",
+      "Recursive — can cause stack overflow on very large arrays",
+      "Performance depends heavily on pivot selection",
+      "Lomuto partition does more swaps than Hoare partition"
+    ],
+    "interviewQuestions": [
+      "What causes Quick Sort to degrade to O(n²) and how can it be prevented?",
+      "Explain the difference between Lomuto and Hoare partition schemes.",
+      "Why is Quick Sort faster in practice than Merge Sort despite the same average complexity?",
+      "How does randomized pivot selection improve Quick Sort performance?",
+      "What is the 3-way partition and when is it useful?"
+    ],
+    "commonMistakes": [
+      "Always choosing the first or last element as pivot on sorted data",
+      "Not handling duplicate elements properly leading to O(n²) behavior",
+      "Incorrectly placing the pivot after partitioning",
+      "Forgetting the base case in the recursive implementation",
+      "Confusing partition index boundaries causing off-by-one errors"
+    ]
+  },
+  "heapSort": {
+    "name": "Heap Sort",
+    "category": "Sorting Algorithm",
+    "description": "Heap Sort uses a binary heap data structure to sort elements. It first builds a max-heap from the array, then repeatedly extracts the maximum element and places it at the end of the sorted region. It combines the speed of Merge Sort with the in-place advantage of Selection Sort.",
+    "howItWorks": [
+      "Build a max-heap from the input array (heapify all non-leaf nodes).",
+      "The largest element is now at the root (index 0).",
+      "Swap the root with the last element of the heap.",
+      "Reduce the heap size by one (the last element is now sorted).",
+      "Heapify the root to restore the max-heap property.",
+      "Repeat steps 2–5 until the heap size is 1."
+    ],
+    "complexity": {
+      "best": "O(n log n)",
+      "average": "O(n log n)",
+      "worst": "O(n log n)",
+      "space": "O(1)"
+    },
+    "applications": [
+      "Priority queue implementations",
+      "Systems requiring guaranteed O(n log n) worst-case with O(1) space",
+      "Embedded systems with strict memory constraints",
+      "Operating system scheduling algorithms",
+      "Finding k-th largest/smallest elements"
+    ],
+    "advantages": [
+      "Guaranteed O(n log n) worst-case time",
+      "In-place — O(1) extra space",
+      "No worst-case quadratic behavior unlike Quick Sort",
+      "Useful for priority queue operations"
+    ],
+    "disadvantages": [
+      "Not stable",
+      "Poor cache performance — frequent non-local memory accesses",
+      "Slower in practice than Quick Sort due to constant factors",
+      "Not adaptive — same time complexity regardless of input order",
+      "More complex implementation than simple sorts"
+    ],
+    "interviewQuestions": [
+      "Why is Heap Sort not stable? Can you provide an example?",
+      "What is the difference between building a heap and heapifying?",
+      "How does Heap Sort compare with Merge Sort in terms of space complexity?",
+      "When would you prefer Heap Sort over Quick Sort?"
+    ],
+    "commonMistakes": [
+      "Confusing max-heap and min-heap usage in ascending vs descending sort",
+      "Not starting heapify from the correct index (last non-leaf node)",
+      "Forgetting to reduce heap size after each extraction",
+      "Incorrectly calculating child indices (2i+1, 2i+2 for 0-indexed arrays)"
+    ]
+  },
+  "linearSearch": {
+    "name": "Linear Search",
+    "category": "Searching Algorithm",
+    "description": "Linear Search (Sequential Search) is the simplest searching algorithm. It sequentially checks each element of the list until a match is found or the entire list has been searched. It works on both sorted and unsorted arrays.",
+    "howItWorks": [
+      "Start from the first element of the array.",
+      "Compare the current element with the target value.",
+      "If they match, return the index — search successful.",
+      "If not, move to the next element.",
+      "If the end of the array is reached without finding the target, the search fails."
+    ],
+    "complexity": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(1)"
+    },
+    "applications": [
+      "Searching in unsorted or small datasets",
+      "When data is searched only once or rarely",
+      "Linked lists where random access is not possible",
+      "Searching when the cost of sorting exceeds the cost of searching"
+    ],
+    "advantages": [
+      "Works on unsorted data",
+      "Simple to implement",
+      "No preprocessing required",
+      "Works on any data structure that supports sequential access",
+      "O(1) space complexity"
+    ],
+    "disadvantages": [
+      "Slow for large datasets — O(n)",
+      "Not efficient compared to binary search on sorted data",
+      "Checks every element in the worst case",
+      "Does not take advantage of sorted data"
+    ],
+    "interviewQuestions": [
+      "When is Linear Search preferred over Binary Search?",
+      "How would you optimize Linear Search using a sentinel value?",
+      "Can Linear Search be used on linked lists? Why is it often the only option?",
+      "What is the expected number of comparisons for a successful Linear Search?"
+    ],
+    "commonMistakes": [
+      "Not considering early termination when the element is found",
+      "Using Linear Search on large sorted datasets where Binary Search would be better",
+      "Returning the wrong index or forgetting to handle the not-found case",
+      "Not recognizing that Linear Search is the only option for unsorted data"
+    ]
+  },
+  "binarySearch": {
+    "name": "Binary Search",
+    "category": "Searching Algorithm",
+    "description": "Binary Search is a fast search algorithm that works on sorted arrays. It repeatedly divides the search interval in half. If the target value is less than the middle element, the search continues in the lower half; otherwise, it continues in the upper half. This halving makes it exponentially faster than linear search.",
+    "howItWorks": [
+      "Ensure the array is sorted.",
+      "Set low = 0 and high = array length - 1.",
+      "Calculate mid = floor((low + high) / 2).",
+      "If array[mid] equals the target, return mid.",
+      "If target < array[mid], set high = mid - 1 (search left half).",
+      "If target > array[mid], set low = mid + 1 (search right half).",
+      "Repeat until low > high (target not found)."
+    ],
+    "complexity": {
+      "best": "O(1)",
+      "average": "O(log n)",
+      "worst": "O(log n)",
+      "space": "O(1)"
+    },
+    "applications": [
+      "Searching in sorted arrays and databases",
+      "Dictionary lookup and spell checkers",
+      "Finding insertion points for maintaining sorted order",
+      "Solving optimization problems (binary search on answer)",
+      "Git bisect — finding the commit that introduced a bug"
+    ],
+    "advantages": [
+      "Very fast — O(log n) time complexity",
+      "Efficient for large sorted datasets",
+      "Simple recursive or iterative implementation",
+      "O(1) space for iterative version",
+      "Widely applicable in competitive programming"
+    ],
+    "disadvantages": [
+      "Requires sorted data — sorting costs O(n log n)",
+      "Only works with random access data structures (not linked lists)",
+      "Not efficient for small datasets — linear search may be faster",
+      "Insertion and deletion in sorted arrays are expensive O(n)"
+    ],
+    "interviewQuestions": [
+      "What happens if the array is not sorted before applying Binary Search?",
+      "How do you handle integer overflow when calculating the mid index?",
+      "What is the difference between iterative and recursive Binary Search?",
+      "How can Binary Search be used to find the first or last occurrence of a value?",
+      "Explain binary search on the answer technique with an example."
+    ],
+    "commonMistakes": [
+      "Using (low + high) / 2 instead of low + (high - low) / 2 causing overflow",
+      "Off-by-one errors in setting low and high boundaries",
+      "Applying Binary Search on unsorted data and getting incorrect results",
+      "Not handling the case where the target is not present in the array",
+      "Infinite loop due to incorrect update of low or high pointers"
+    ]
+  },
+  "linkedList": {
+    "name": "Linked List",
+    "category": "Data Structure",
+    "description": "A Linked List is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, linked list elements are not stored in contiguous memory locations, allowing efficient insertion and deletion at any position.",
+    "howItWorks": [
+      "Each node contains data and a reference (pointer) to the next node.",
+      "The first node is called the \"head\" and the last node points to null.",
+      "Insert Head: create a new node, point it to the current head, update head.",
+      "Insert Tail: traverse to the last node, set its next to the new node.",
+      "Delete: find the node, update the previous node's pointer to skip it.",
+      "Search: traverse from head, comparing each node's value with the target.",
+      "Reverse: iterate through the list, reversing each pointer direction."
+    ],
+    "complexity": {
+      "best": "O(1)",
+      "average": "O(n)",
+      "worst": "O(n)",
+      "space": "O(n)"
+    },
+    "applications": [
+      "Implementing stacks, queues, and hash table chaining",
+      "Dynamic memory allocation (free lists)",
+      "Undo functionality in applications",
+      "Music playlists and image viewers (circular linked lists)",
+      "Polynomial arithmetic and sparse matrices"
+    ],
+    "advantages": [
+      "Dynamic size — no fixed capacity",
+      "Efficient O(1) insertions and deletions at known positions",
+      "No wasted memory from pre-allocation",
+      "Easy to implement stacks, queues, and other ADTs"
+    ],
+    "disadvantages": [
+      "No random access — must traverse from head O(n)",
+      "Extra memory for storing pointers",
+      "Poor cache locality — nodes scattered in memory",
+      "Reverse traversal not possible in singly linked lists",
+      "More complex implementation than arrays"
+    ],
+    "interviewQuestions": [
+      "How do you detect a cycle in a linked list?",
+      "How would you reverse a linked list iteratively and recursively?",
+      "What is the difference between singly and doubly linked lists?",
+      "How do you find the middle element of a linked list in one pass?",
+      "How do you merge two sorted linked lists?"
+    ],
+    "commonMistakes": [
+      "Losing reference to the head when modifying the list",
+      "Not handling edge cases like empty list or single-node list",
+      "Creating memory leaks by not properly updating pointers during deletion",
+      "Forgetting to update the tail pointer in doubly linked lists",
+      "Off-by-one errors when traversing to a specific position"
+    ]
+  },
+  "stack": {
+    "name": "Stack",
+    "category": "Data Structure",
+    "description": "A Stack is a linear data structure that follows the Last In, First Out (LIFO) principle. The last element added is the first one to be removed. Think of it like a stack of plates — you add and remove plates from the top.",
+    "howItWorks": [
+      "Push: add an element to the top of the stack.",
+      "Pop: remove and return the top element.",
+      "Peek: view the top element without removing it.",
+      "The stack can be implemented using an array or a linked list.",
+      "Overflow occurs when pushing onto a full stack; underflow when popping an empty one."
+    ],
+    "complexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)",
+      "space": "O(n)"
+    },
+    "applications": [
+      "Function call management (call stack)",
+      "Expression evaluation and syntax parsing",
+      "Undo/Redo operations in editors",
+      "Browser history (back button)",
+      "Depth-First Search (DFS) in graphs",
+      "Balanced parentheses checking"
+    ],
+    "advantages": [
+      "All operations are O(1)",
+      "Simple to implement",
+      "Memory efficient for LIFO access patterns",
+      "Naturally supports recursion"
+    ],
+    "disadvantages": [
+      "Limited access — only the top element is accessible",
+      "Fixed size in array-based implementations",
+      "Not suitable for random access or searching",
+      "Stack overflow risk in recursive algorithms"
+    ],
+    "interviewQuestions": [
+      "How would you implement a stack using two queues?",
+      "How do you evaluate a postfix expression using a stack?",
+      "What is the difference between stack memory and heap memory?",
+      "How can a stack be used to check balanced parentheses?"
+    ],
+    "commonMistakes": [
+      "Not checking for underflow before popping or peeking",
+      "Confusing LIFO behavior with FIFO when choosing between stack and queue",
+      "Not considering stack overflow in recursive implementations",
+      "Implementing a stack with an array but forgetting to track the top pointer"
+    ]
+  },
+  "queue": {
+    "name": "Queue",
+    "category": "Data Structure",
+    "description": "A Queue is a linear data structure that follows the First In, First Out (FIFO) principle. Elements are added at the rear (enqueue) and removed from the front (dequeue). Think of it like a line at a ticket counter.",
+    "howItWorks": [
+      "Enqueue: add an element to the rear of the queue.",
+      "Dequeue: remove and return the element at the front.",
+      "Front: view the front element without removing it.",
+      "Rear: view the last element.",
+      "The queue can be implemented using an array (circular) or a linked list."
+    ],
+    "complexity": {
+      "best": "O(1)",
+      "average": "O(1)",
+      "worst": "O(1)",
+      "space": "O(n)"
+    },
+    "applications": [
+      "CPU and disk scheduling in operating systems",
+      "Breadth-First Search (BFS) in graphs",
+      "Print job spooling",
+      "Request handling in web servers",
+      "Buffering in data streams",
+      "Message queues in distributed systems"
+    ],
+    "advantages": [
+      "All operations are O(1)",
+      "Maintains insertion order",
+      "Fair processing — first come, first served",
+      "Simple to implement"
+    ],
+    "disadvantages": [
+      "Limited access — only front and rear elements",
+      "Fixed size in array-based implementations (unless circular)",
+      "Not suitable for random access",
+      "Searching requires O(n) time"
+    ],
+    "interviewQuestions": [
+      "How would you implement a queue using two stacks?",
+      "What is the difference between a linear queue and a circular queue?",
+      "When would you use a priority queue instead of a regular queue?",
+      "How is a deque different from a regular queue?"
+    ],
+    "commonMistakes": [
+      "Not implementing circular behavior in array-based queues causing wasted space",
+      "Confusing front and rear pointers during enqueue and dequeue",
+      "Forgetting to handle queue overflow and underflow conditions",
+      "Using a queue where a priority queue is needed for optimal performance"
+    ]
+  },
+  "bst": {
+    "name": "Binary Search Tree",
+    "category": "Tree Data Structure",
+    "description": "A Binary Search Tree (BST) is a hierarchical data structure where each node has at most two children. For every node, all values in its left subtree are less than the node's value, and all values in its right subtree are greater. This property enables efficient searching, insertion, and deletion.",
+    "howItWorks": [
+      "Insert: compare with root, go left if smaller, right if larger, insert at the empty position.",
+      "Search: compare with current node, go left or right accordingly until found or null.",
+      "Delete: three cases — leaf (remove directly), one child (replace with child), two children (replace with inorder successor).",
+      "Inorder traversal (Left, Root, Right) gives elements in sorted order.",
+      "Preorder traversal (Root, Left, Right) useful for tree copying.",
+      "Postorder traversal (Left, Right, Root) useful for tree deletion.",
+      "Level Order traversal uses a queue to visit nodes level by level."
+    ],
+    "complexity": {
+      "best": "O(log n)",
+      "average": "O(log n)",
+      "worst": "O(n)",
+      "space": "O(n)"
+    },
+    "applications": [
+      "Database indexing (B-Trees are generalized BSTs)",
+      "Symbol tables in compilers",
+      "Priority queues (with balanced BSTs)",
+      "Auto-complete and spell-checking (Trie is a variant)",
+      "File system organization"
+    ],
+    "advantages": [
+      "O(log n) average-case operations",
+      "Maintains sorted order for efficient range queries",
+      "Dynamic — easy insertion and deletion",
+      "Flexible traversal orders for different use cases"
+    ],
+    "disadvantages": [
+      "Can degrade to O(n) if unbalanced (becomes a linked list)",
+      "No O(1) access — must traverse from root",
+      "Balancing requires additional complexity (AVL, Red-Black trees)",
+      "More complex implementation than arrays or linked lists",
+      "Poor cache performance due to pointer-based structure"
+    ],
+    "interviewQuestions": [
+      "How does a BST degrade to O(n) operations and how can it be prevented?",
+      "How do you find the k-th smallest element in a BST?",
+      "What is the difference between a BST and a balanced BST (AVL/Red-Black)?",
+      "How do you validate whether a given binary tree is a valid BST?",
+      "How do you find the lowest common ancestor of two nodes in a BST?"
+    ],
+    "commonMistakes": [
+      "Not handling the three cases of deletion correctly (leaf, one child, two children)",
+      "Validating BST by only checking immediate children instead of entire subtree ranges",
+      "Inserting duplicate values without a consistent policy (left or right)",
+      "Not considering that an unbalanced BST becomes a linked list"
+    ]
+  },
+  "bfs": {
+    "name": "Breadth-First Search",
+    "category": "Graph Algorithm",
+    "description": "BFS explores a graph level by level, visiting all neighbors of a node before moving to the next level. It uses a queue to manage the frontier of nodes to explore. BFS finds the shortest path in unweighted graphs and is fundamental to many graph algorithms.",
+    "howItWorks": [
+      "Start by enqueueing the source node and marking it as visited.",
+      "Dequeue a node from the front of the queue.",
+      "Visit all unvisited neighbors of that node.",
+      "Mark each neighbor as visited and enqueue it.",
+      "Repeat until the queue is empty.",
+      "The order of visits represents a BFS traversal."
+    ],
+    "complexity": {
+      "best": "O(V + E)",
+      "average": "O(V + E)",
+      "worst": "O(V + E)",
+      "space": "O(V)"
+    },
+    "applications": [
+      "Shortest path in unweighted graphs",
+      "Web crawling and social network analysis",
+      "Finding connected components",
+      "Level-order traversal of trees",
+      "Peer-to-peer network broadcasting",
+      "GPS navigation and map routing"
+    ],
+    "advantages": [
+      "Guarantees shortest path in unweighted graphs",
+      "Complete — will find a solution if one exists",
+      "Explores all nodes at current depth before going deeper",
+      "Good for finding closest neighbors"
+    ],
+    "disadvantages": [
+      "Requires O(V) space for the queue",
+      "Not suitable for very deep graphs",
+      "Slower than DFS for deep solutions",
+      "Memory-intensive for large, wide graphs"
+    ],
+    "interviewQuestions": [
+      "Why does BFS guarantee the shortest path in unweighted graphs?",
+      "How does BFS differ from DFS in terms of space complexity?",
+      "How would you modify BFS to find the shortest path and reconstruct it?",
+      "Can BFS be used to detect cycles in an undirected graph? How?"
+    ],
+    "commonMistakes": [
+      "Forgetting to mark nodes as visited before enqueueing causing duplicates",
+      "Using a stack instead of a queue which turns BFS into DFS",
+      "Not tracking the parent or level information when shortest path is needed",
+      "Applying BFS on weighted graphs expecting shortest paths (use Dijkstra instead)"
+    ]
+  },
+  "dfs": {
+    "name": "Depth-First Search",
+    "category": "Graph Algorithm",
+    "description": "DFS explores a graph by going as deep as possible along each branch before backtracking. It uses a stack (or recursion) to track the path. DFS is essential for detecting cycles, topological sorting, and exploring all possible paths.",
+    "howItWorks": [
+      "Start by pushing the source node onto the stack and marking it visited.",
+      "Pop a node from the stack.",
+      "Visit all unvisited neighbors, marking each as visited and pushing onto the stack.",
+      "Continue until the stack is empty.",
+      "Backtrack when a node has no unvisited neighbors.",
+      "The order of visits represents a DFS traversal."
+    ],
+    "complexity": {
+      "best": "O(V + E)",
+      "average": "O(V + E)",
+      "worst": "O(V + E)",
+      "space": "O(V)"
+    },
+    "applications": [
+      "Cycle detection in graphs",
+      "Topological sorting",
+      "Maze solving and puzzle solving",
+      "Finding strongly connected components",
+      "Path finding in game AI",
+      "Detecting bridges and articulation points"
+    ],
+    "advantages": [
+      "Memory efficient — O(V) space for the stack",
+      "Can find solutions in deep graphs quickly",
+      "Natural recursive implementation",
+      "Good for exhaustive search and backtracking"
+    ],
+    "disadvantages": [
+      "Does not guarantee shortest path",
+      "Can get stuck in infinite loops without visited tracking",
+      "May explore unnecessary deep branches",
+      "Not complete for infinite graphs without depth limits"
+    ],
+    "interviewQuestions": [
+      "How do you detect a cycle in a directed graph using DFS?",
+      "What is the difference between pre-order, in-order, and post-order DFS traversals?",
+      "How is DFS used for topological sorting?",
+      "When would you use iterative DFS over recursive DFS?"
+    ],
+    "commonMistakes": [
+      "Not marking nodes as visited leading to infinite loops in cyclic graphs",
+      "Confusing DFS tree edges, back edges, and cross edges in cycle detection",
+      "Using DFS to find shortest paths — DFS does not guarantee shortest paths",
+      "Not properly backtracking the visited state in problems requiring all paths"
+    ]
+  },
+  "dijkstra": {
+    "name": "Dijkstra's Algorithm",
+    "category": "Graph Algorithm",
+    "description": "Dijkstra's Algorithm finds the shortest path from a source node to all other nodes in a weighted graph with non-negative edge weights. It uses a greedy approach, always processing the unvisited node with the smallest known distance. It is one of the most important algorithms in computer science.",
+    "howItWorks": [
+      "Initialize distances: source = 0, all others = infinity.",
+      "Add the source node to a priority queue (min-heap).",
+      "Extract the node with minimum distance from the queue.",
+      "For each neighbor, calculate the distance through the current node.",
+      "If this distance is shorter than the known distance, update it (relaxation).",
+      "Add the updated neighbor to the priority queue.",
+      "Repeat until all reachable nodes are processed."
+    ],
+    "complexity": {
+      "best": "O((V + E) log V)",
+      "average": "O((V + E) log V)",
+      "worst": "O((V + E) log V)",
+      "space": "O(V)"
+    },
+    "applications": [
+      "GPS navigation and route planning (Google Maps, Waze)",
+      "Network routing protocols (OSPF, IS-IS)",
+      "Robotics path planning",
+      "Airline route optimization",
+      "Social network shortest connections",
+      "Video game AI pathfinding"
+    ],
+    "advantages": [
+      "Guarantees shortest path for non-negative weights",
+      "Efficient with a priority queue — O((V+E) log V)",
+      "Works for both directed and undirected graphs",
+      "Foundation for many other shortest-path algorithms"
+    ],
+    "disadvantages": [
+      "Cannot handle negative edge weights (use Bellman-Ford instead)",
+      "Requires a priority queue for efficiency",
+      "Processes all nodes — not goal-directed (use A* for that)",
+      "Dense graphs can be slow without adjacency list representation"
+    ],
+    "interviewQuestions": [
+      "Why does Dijkstra fail with negative edge weights?",
+      "How does Dijkstra differ from Bellman-Ford and when would you use each?",
+      "What data structure makes Dijkstra most efficient and why?",
+      "How would you reconstruct the shortest path after running Dijkstra?",
+      "Can Dijkstra be used on undirected graphs?"
+    ],
+    "commonMistakes": [
+      "Applying Dijkstra on graphs with negative edge weights",
+      "Not using a priority queue leading to O(V²) instead of O((V+E)log V)",
+      "Forgetting to skip already-processed nodes causing incorrect results",
+      "Not initializing all distances to infinity except the source node",
+      "Confusing Dijkstra with BFS — Dijkstra handles weighted edges, BFS does not"
+    ]
+  }
+}

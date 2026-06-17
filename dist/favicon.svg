@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A"/>
+      <stop offset="100%" style="stop-color:#020617"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#2563EB"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="bar5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- Subtle border -->
+  <rect width="508" height="508" x="2" y="2" rx="94" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+  <!-- Sorting bars (ascending pattern) -->
+  <rect x="72"  y="340" width="52" height="80"  rx="8" fill="url(#bar5)"/>
+  <rect x="144" y="280" width="52" height="140" rx="8" fill="url(#bar3)"/>
+  <rect x="216" y="220" width="52" height="200" rx="8" fill="url(#bar1)"/>
+  <rect x="288" y="160" width="52" height="260" rx="8" fill="url(#bar2)"/>
+  <rect x="360" y="92"  width="52" height="328" rx="8" fill="url(#bar4)"/>
+  <!-- Small node connections (graph hint) -->
+  <circle cx="98"  cy="80" r="10" fill="#3B82F6" opacity="0.5"/>
+  <circle cx="170" cy="68" r="8"  fill="#8B5CF6" opacity="0.4"/>
+  <circle cx="400" cy="65" r="9"  fill="#06B6D4" opacity="0.4"/>
+  <line x1="98" y1="80" x2="170" y2="68" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+  <line x1="170" y1="68" x2="400" y2="65" stroke="#8B5CF6" stroke-width="1.5" opacity="0.2"/>
+  <!-- Glow effect on tallest bar -->
+  <rect x="360" y="92" width="52" height="328" rx="8" fill="url(#bar4)" filter="url(#glow)" opacity="0.3"/>
+</svg>

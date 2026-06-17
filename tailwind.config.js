@@ -1,0 +1,137 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        dark: {
+          950: '#020617',
+          900: '#0F172A',
+          800: '#111827',
+          700: '#1E293B',
+          600: '#334155',
+        },
+        primary: {
+          DEFAULT: '#3B82F6',
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#3B82F6',
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#1E3A8A',
+        },
+        secondary: {
+          DEFAULT: '#8B5CF6',
+          50: '#F5F3FF',
+          100: '#EDE9FE',
+          200: '#DDD6FE',
+          300: '#C4B5FD',
+          400: '#A78BFA',
+          500: '#8B5CF6',
+          600: '#7C3AED',
+          700: '#6D28D9',
+          800: '#5B21B6',
+          900: '#4C1D95',
+        },
+        accent: {
+          DEFAULT: '#06B6D4',
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#06B6D4',
+          600: '#0891B2',
+          700: '#0E7490',
+          800: '#155E75',
+          900: '#164E63',
+        },
+        success: {
+          DEFAULT: '#10B981',
+          400: '#34D399',
+          500: '#10B981',
+          600: '#059669',
+        },
+        warning: {
+          DEFAULT: '#F59E0B',
+          400: '#FBBF24',
+          500: '#F59E0B',
+          600: '#D97706',
+        },
+        danger: {
+          DEFAULT: '#EF4444',
+          400: '#F87171',
+          500: '#EF4444',
+          600: '#DC2626',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      animation: {
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'slide-up': 'slide-up 0.5s ease-out',
+        'slide-down': 'slide-down 0.3s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out',
+        'spin-slow': 'spin 3s linear infinite',
+        'bounce-soft': 'bounce-soft 2s infinite',
+      },
+      keyframes: {
+        glow: {
+          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4)' },
+        },
+        'glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.3)' },
+          '50%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'slide-up': {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'slide-down': {
+          '0%': { transform: 'translateY(-10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'bounce-soft': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        'glow-sm': '0 0 10px rgba(59, 130, 246, 0.3)',
+        'glow-md': '0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)',
+        'glow-lg': '0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3)',
+        'glow-purple': '0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2)',
+        'glow-cyan': '0 0 20px rgba(6, 182, 212, 0.4), 0 0 40px rgba(6, 182, 212, 0.2)',
+        'inner-glow': 'inset 0 0 20px rgba(59, 130, 246, 0.1)',
+      },
+    },
+  },
+  plugins: [],
+};

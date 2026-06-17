@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Visualize, learn, practice, and master Data Structures and Algorithms through interactive visualizations and challenge-based learning." />
+    <meta name="keywords" content="DSA, algorithms, data structures, visualizer, sorting, searching, graphs, trees, interactive learning" />
+    <meta name="author" content="AlgoForge" />
+    <meta property="og:title" content="AlgoForge - Interactive DSA Learning Platform" />
+    <meta property="og:description" content="Visualize, learn, practice, and master Data Structures and Algorithms through interactive visualizations and challenge-based learning." />
+    <meta name="theme-color" content="#020617" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>AlgoForge - Interactive DSA Learning Platform</title>
+
+    <style>
+      /* Critical CSS for initial load */
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #020617;
+        color: #F8FAFC;
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+      /* Loading spinner */
+      .initial-loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: #020617;
+      }
+      .initial-loader .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(59, 130, 246, 0.2);
+        border-top-color: #3B82F6;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="initial-loader">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
