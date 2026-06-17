@@ -212,12 +212,12 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-xs text-slate-500 font-semibold select-none">
-          <span className="text-slate-400">{`Turning TLEs into ACs.`}</span>
+          <span className="text-slate-400">{`Code•Visualize•Learn•Repeat`}</span>
           <span className="hidden md:inline text-white/[0.08]">|</span>
           <span className="text-slate-400">© 2026 AlgoForge</span>
           <span className="hidden md:inline text-white/[0.08]">|</span>
           <div className="flex items-center gap-1">
-            <span>Built by</span>
+            <span>Developed with ❤️ by</span>
             <a
               href="https://www.linkedin.com/in/yaswanth-chowdary-nadendla-174a662a8/"
               target="_blank"
