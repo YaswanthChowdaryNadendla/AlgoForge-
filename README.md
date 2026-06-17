@@ -1,96 +1,82 @@
- -------------------------------------------------ALGO FORGE-------------------------------------------------------------
+# 🚀 AlgoForge
 
-Visualize • Learn • Practice • Master
+### Visualize • Learn • Practice • Master
 
-AlgoForge is an interactive Data Structures & Algorithms learning platform designed to help students understand DSA concepts through real-time visualizations, execution tracing, complexity analysis, and challenge-based learning.
+AlgoForge is an interactive Data Structures & Algorithms learning platform that helps students understand DSA concepts through real-time visualizations, execution tracing, complexity analysis, and challenge-based learning.
 
+---
 
-🌟 Features:
-📊 Algorithm Visualizers
+## ✨ Features
 
-* Sorting Visualizer
+### 📊 Algorithm Visualizers
+- Sorting Visualizer
+  - Bubble Sort
+  - Selection Sort
+  - Insertion Sort
+  - Merge Sort
+  - Quick Sort
+  - Heap Sort
 
-  * Bubble Sort
-  * Selection Sort
-  * Insertion Sort
-  * Merge Sort
-  * Quick Sort
-  * Heap Sort
+- Searching Visualizer
+  - Linear Search
+  - Binary Search
 
-* Searching Visualizer
+- Linked List Visualizer
+- Stack Visualizer
+- Queue Visualizer
+- Tree Visualizer
+- Graph Visualizer
 
-  * Linear Search
-  * Binary Search
+### 🎯 Challenge Mode
+- 50+ DSA Questions
+- Randomized Question Generation
+- Practice-Oriented Learning
+- Refresh for New Challenges
 
-* Linked List Visualizer
+### 📚 Learning Modules
+- Algorithm Theory
+- Time Complexity Analysis
+- Space Complexity Analysis
+- Step-by-Step Execution
+- Code Examples
 
-* Stack Visualizer
+### ⚡ Highlights
+- Interactive Visualizations
+- Real-Time Algorithm Execution
+- Complexity Tracking
+- Responsive Design
+- Modern UI/UX
+- Fast Navigation
+- Lazy Loading & Code Splitting
+- Mobile Friendly
 
-* Queue Visualizer
+---
 
-* Tree Visualizer
+## 🛠️ Tech Stack
 
-* Graph Visualizer
+**Frontend**
+- React.js
+- Vite
+- JavaScript (ES6+)
+- Tailwind CSS
 
+**Libraries**
+- Framer Motion
+- React Router DOM
+- React Flow
+- Lucide React
+- React Icons
 
- 🎯 Challenge Mode
+**Tools**
+- Git
+- GitHub
+- Vercel
 
-* 50+ DSA Questions
-* Randomized question display
-* Refresh for new challenges
-* Practice-oriented learning
+---
 
+## 📂 Project Structure
 
- 📚 Learning Modules
-
-* Algorithm Theory
-* Time Complexity Analysis
-* Space Complexity Analysis
-* Step-by-Step Execution
-* Code Examples
-
-
- ⚡ Key Highlights
-
-* Interactive Bar Graph Animations
-* Real-Time Algorithm Execution
-* Complexity Tracking
-* Responsive Design
-* Modern UI/UX
-* Lazy Loading & Code Splitting
-* Fast Navigation
-* Mobile Friendly
-
-
-
-🛠️ Tech Stack
-
-Frontend
-
-* React.js
-* Vite
-* JavaScript (ES6+)
-* Tailwind CSS
-
- Libraries
-
-* Framer Motion
-* React Router DOM
-* React Flow
-* Lucide React
-* React Icons
-
- Tools
-
-* Git
-* GitHub
-* Vercel
-
-
-
- 📂 Project Structure
-
-
+```bash
 src/
 ├── components/
 ├── pages/
@@ -100,39 +86,58 @@ src/
 ├── layouts/
 ├── utils/
 └── assets/
+```
 
+---
 
- 🚀 Installation
+## 🚀 Getting Started
 
-Clone the repository:
+### Clone Repository
 
-
+```bash
 git clone https://github.com/YaswanthChowdaryNadendla/AlgoForge-.git
+```
 
+### Install Dependencies
 
-Navigate to project folder:
-cd algoforge
-
-Install dependencies:
+```bash
 npm install
+```
 
-Run locally:
+### Run Development Server
+
+```bash
 npm run dev
+```
 
-Build for production:
+### Build Production Version
+
+```bash
 npm run build
+```
 
-🌐 Live Demo
-algoforge-dsa.vercel.app
+---
 
-👨‍💻 Author
- Yaswanth Chowdary Nadendla
+## 🌐 Live Demo
 
-* GitHub: https://github.com/YaswanthChowdaryNadendla
-* LinkedIn: https://www.linkedin.com/in/yaswanth-chowdary-nadendla-174a662a8/
+https://algoforge-dsa.vercel.app
 
-⭐ Support
+---
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+## 👨‍💻 Author
 
-"Forge Your DSA Skills One Algorithm at a Time."
+**Yaswanth Chowdary Nadendla**
+
+GitHub:
+https://github.com/YaswanthChowdaryNadendla
+
+LinkedIn:
+https://www.linkedin.com/in/yaswanth-chowdary-nadendla-174a662a8/
+
+---
+
+## ⭐ Support
+
+If you found AlgoForge helpful, consider giving this repository a ⭐.
+
+### "Forge Your DSA Skills One Algorithm at a Time."
