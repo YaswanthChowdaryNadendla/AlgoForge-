@@ -107,7 +107,7 @@ src/
 Clone the repository:
 
 
-git clone https://github.com/YOUR_USERNAME/algoforge.git
+git clone https://github.com/YaswanthChowdaryNadendla/AlgoForge-.git
 
 
 Navigate to project folder:
@@ -129,7 +129,7 @@ algoforge-dsa.vercel.app
  Yaswanth Chowdary Nadendla
 
 * GitHub: https://github.com/YaswanthChowdaryNadendla
-* LinkedIn: Add your LinkedIn profile URL
+* LinkedIn: https://www.linkedin.com/in/yaswanth-chowdary-nadendla-174a662a8/
 
 ⭐ Support
 
