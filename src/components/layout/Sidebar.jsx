@@ -7,6 +7,7 @@ import {
   Home, Brain, Globe, Github, Linkedin
 } from 'lucide-react';
 import Logo from '../ui/Logo';
+import { useApp } from '../../context/AppContext';
 
 const navItems = [
   { path: '/sorting', label: 'Sorting', icon: BarChart3 },
@@ -67,6 +68,8 @@ function SocialLink({ href, icon: Icon, tooltipText, collapsed }) {
 }
 
 export default function Sidebar({ collapsed = false, onToggle }) {
+  const { theme, toggleTheme } = useApp();
+
   return (
     <motion.aside
       animate={{ width: collapsed ? 72 : 256 }}
@@ -151,6 +154,18 @@ export default function Sidebar({ collapsed = false, onToggle }) {
           </NavLink>
         ))}
       </nav>
+
+      {/* Theme Toggle */}
+      <div className={`px-3 py-2 border-t border-white/[0.06] shrink-0 flex ${collapsed ? 'flex-col items-center' : 'flex-col gap-1'} gap-1.5`}>
+        <button
+          onClick={toggleTheme}
+          className={`flex items-center ${collapsed ? 'justify-center w-8 h-8' : 'px-3 py-2 w-full justify-start gap-2.5'} rounded-xl text-xs font-semibold
+                     text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] transition-all`}
+          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        >
+          <span>{collapsed ? (theme === 'dark' ? '☀️' : '🌙') : (theme === 'dark' ? '☀️ Light' : '🌙 Dark')}</span>
+        </button>
+      </div>
 
       {/* Social Links Footer */}
       <div className={`px-3 py-2 border-t border-white/[0.06] shrink-0 flex ${collapsed ? 'flex-col items-center' : 'flex-row justify-around'} gap-2`}>

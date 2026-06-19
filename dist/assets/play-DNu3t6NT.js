@@ -1,0 +1,1 @@
+import{g as e}from"./index-Bk_Ya7TM.js";var t=e(`play`,[[`polygon`,{points:`6 3 20 12 6 21 6 3`,key:`1oa8hb`}]]);export{t};
