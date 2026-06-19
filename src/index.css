@@ -328,3 +328,18 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Page Heading Perfect Baseline Alignment */
+h1.text-white,
+h1.text-slate-900,
+.text-2xl.md\:text-3xl.font-bold {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  line-height: 1.2 !important;
+}
+
+.gradient-text,
+.gradient-text-warm {
+  vertical-align: baseline !important;
+  line-height: inherit !important;
+}
