@@ -163,7 +163,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
                      text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] transition-all`}
           title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         >
-          <span>{collapsed ? (theme === 'dark' ? '☀️' : '🌙') : (theme === 'dark' ? '☀️ Light' : '🌙 Dark')}</span>
+          <span>{collapsed ? (theme === 'dark' ? '☀️' : '🌙') : (theme === 'dark' ? '☀️ Switch to Light' : '🌙 Switch to Dark')}</span>
         </button>
       </div>
 

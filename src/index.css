@@ -103,13 +103,19 @@
 
   /* Gradient Text */
   .gradient-text {
-    @apply bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent inline-block;
     background-image: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4);
+    padding: 0.05em 0.05em 0.1em 0.05em;
+    line-height: 1.25;
+    vertical-align: bottom;
   }
 
   .gradient-text-warm {
-    @apply bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent inline-block;
     background-image: linear-gradient(135deg, #F59E0B, #EF4444, #8B5CF6);
+    padding: 0.05em 0.05em 0.1em 0.05em;
+    line-height: 1.25;
+    vertical-align: bottom;
   }
 
   /* Animated Gradient Background */
