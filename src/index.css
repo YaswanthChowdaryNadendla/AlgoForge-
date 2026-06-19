@@ -509,5 +509,39 @@ html.theme-changing ::after {
   background-image: linear-gradient(to right, rgba(248, 250, 252, 0.3), transparent, rgba(248, 250, 252, 0.3)) !important;
 }
 
+/* Light Mode text-white utility overrides to prevent invisible text */
+.light .text-white {
+  color: #0f172a !important; /* slate-900 */
+}
+
+/* Retain high-contrast white text for elements with solid dark background styles */
+.light .btn-primary,
+.light .btn-primary *,
+.light .btn-secondary,
+.light .btn-secondary *,
+.light .btn-accent,
+.light .btn-accent *,
+.light [class*="bg-primary"],
+.light [class*="bg-primary"] *,
+.light [class*="bg-secondary"],
+.light [class*="bg-secondary"] *,
+.light [class*="bg-accent"],
+.light [class*="bg-accent"] *,
+.light [class*="bg-emerald"],
+.light [class*="bg-emerald"] *,
+.light [class*="bg-rose"],
+.light [class*="bg-rose"] *,
+.light [class*="bg-success"],
+.light [class*="bg-success"] *,
+.light [class*="bg-danger"],
+.light [class*="bg-danger"] *,
+.light [class*="bg-warning"],
+.light [class*="bg-warning"] *,
+.light .complexity-badge,
+.light .complexity-badge * {
+  color: #ffffff !important;
+}
+
+
 
 

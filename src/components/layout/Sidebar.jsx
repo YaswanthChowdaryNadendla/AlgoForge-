@@ -40,7 +40,7 @@ function SocialLink({ href, icon: Icon, tooltipText, collapsed }) {
         onMouseLeave={() => setHovered(false)}
         onTouchStart={() => setHovered(true)}
         onTouchEnd={() => setTimeout(() => setHovered(false), 2000)}
-        className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] text-slate-500 hover:text-white border border-white/[0.04] hover:border-white/[0.1] transition-all duration-200"
+        className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] text-slate-500 hover:text-slate-900 dark:hover:text-white border border-white/[0.04] hover:border-white/[0.1] transition-all duration-200"
         whileHover={{ scale: 1.1 }}
       >
         <Icon className="w-4 h-4" />
@@ -122,10 +122,10 @@ export default function Sidebar({ collapsed = false, onToggle }) {
             className={({ isActive }) =>
               `group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
                transition-all duration-200 relative
-               ${isActive
-                 ? 'text-white bg-white/[0.08]'
-                 : 'text-slate-500 hover:text-slate-300 hover:bg-white/[0.04]'
-               }`
+                ${isActive
+                  ? 'text-slate-900 dark:text-white bg-white/[0.08]'
+                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/[0.04]'
+                }`
             }
           >
             {({ isActive }) => (
