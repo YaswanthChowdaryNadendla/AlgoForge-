@@ -7,7 +7,6 @@ import {
   Home, Brain, Globe, Github, Linkedin
 } from 'lucide-react';
 import Logo from '../ui/Logo';
-import { useApp } from '../../context/AppContext';
 
 const navItems = [
   { path: '/sorting', label: 'Sorting', icon: BarChart3 },
@@ -40,7 +39,7 @@ function SocialLink({ href, icon: Icon, tooltipText, collapsed }) {
         onMouseLeave={() => setHovered(false)}
         onTouchStart={() => setHovered(true)}
         onTouchEnd={() => setTimeout(() => setHovered(false), 2000)}
-        className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] text-slate-500 hover:text-slate-900 dark:hover:text-white border border-white/[0.04] hover:border-white/[0.1] transition-all duration-200"
+        className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] text-slate-500 hover:text-white border border-white/[0.04] hover:border-white/[0.1] transition-all duration-200"
         whileHover={{ scale: 1.1 }}
       >
         <Icon className="w-4 h-4" />
@@ -68,8 +67,6 @@ function SocialLink({ href, icon: Icon, tooltipText, collapsed }) {
 }
 
 export default function Sidebar({ collapsed = false, onToggle }) {
-  const { theme, toggleTheme } = useApp();
-
   return (
     <motion.aside
       animate={{ width: collapsed ? 72 : 256 }}
@@ -123,8 +120,8 @@ export default function Sidebar({ collapsed = false, onToggle }) {
               `group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
                transition-all duration-200 relative
                 ${isActive
-                  ? 'text-slate-900 dark:text-white bg-white/[0.08]'
-                  : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/[0.04]'
+                  ? 'text-white bg-white/[0.08]'
+                  : 'text-slate-500 hover:text-slate-300 hover:bg-white/[0.04]'
                 }`
             }
           >
@@ -155,17 +152,6 @@ export default function Sidebar({ collapsed = false, onToggle }) {
         ))}
       </nav>
 
-      {/* Theme Toggle */}
-      <div className={`px-3 py-2 border-t border-white/[0.06] shrink-0 flex ${collapsed ? 'flex-col items-center' : 'flex-col gap-1'} gap-1.5`}>
-        <button
-          onClick={toggleTheme}
-          className={`flex items-center ${collapsed ? 'justify-center w-8 h-8' : 'px-3 py-2 w-full justify-start gap-2.5'} rounded-xl text-xs font-semibold
-                     text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] transition-all`}
-          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        >
-          <span>{collapsed ? (theme === 'dark' ? '☀️' : '🌙') : (theme === 'dark' ? '☀️ Switch to Light' : '🌙 Switch to Dark')}</span>
-        </button>
-      </div>
 
       {/* Social Links Footer */}
       <div className={`px-3 py-2 border-t border-white/[0.06] shrink-0 flex ${collapsed ? 'flex-col items-center' : 'flex-row justify-around'} gap-2`}>

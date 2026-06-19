@@ -19,7 +19,7 @@ export default function Tabs({ tabs, defaultTab = 0, onChange, className = '' })
             className={`
               relative px-4 py-2 rounded-lg text-sm font-medium
               transition-colors duration-200 flex-1
-              ${activeTab === index ? 'text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'}
+              ${activeTab === index ? 'text-white' : 'text-slate-500 hover:text-slate-300'}
             `}
           >
             {activeTab === index && (

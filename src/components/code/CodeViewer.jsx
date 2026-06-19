@@ -145,8 +145,8 @@ export default function CodeViewer({ algorithmName, activeLine = null }) {
         <motion.button
           onClick={handleCopy}
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
-                      bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-slate-900 dark:hover:text-white
-                     border border-white/[0.06] transition-all duration-200"
+                      bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-white
+                      border border-white/[0.06] transition-all duration-200"
           whileTap={{ scale: 0.95 }}
         >
           {copied ? (
@@ -171,8 +171,8 @@ export default function CodeViewer({ algorithmName, activeLine = null }) {
             onClick={() => { setActiveLang(index); setCopied(false); }}
             className={`relative px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200
               ${activeLang === index
-                ? 'text-slate-900 dark:text-white'
-                : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'
+                ? 'text-white'
+                : 'text-slate-500 hover:text-slate-300'
               }`}
           >
             {activeLang === index && (
